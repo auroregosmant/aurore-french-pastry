@@ -789,73 +789,107 @@ h1.section-title {
 }
 
 /* === Ultra compact sticky top nav bar === */
-/* This section was duplicated in the original CSS, combined and updated. */
 .navbar-compact {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  height: 50px;
-  background-color: var(--light-color); /* couleur douce personnalisable */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  display: flex;
-  align-items: center;
-  padding: 0 2rem; /* Consistent padding */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 48px; /* Slightly more height for better touch targets on mobile */
+    background-color: var(--light-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); /* Slightly stronger shadow */
+    display: flex;
+    align-items: center;
+    padding: 0 1rem; /* Adjusted padding for mobile */
+}
+
+@media (min-width: 768px) {
+    .navbar-compact {
+        height: 60px; /* Taller for desktop */
+        padding: 0 2rem; /* Original padding for desktop */
+    }
 }
 
 /* container interne de la nav */
 .navbar-compact-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  width: 100%;
-  padding: 0; /* Handled by parent .navbar-compact */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0; /* Handled by parent .navbar-compact */
 }
 
 /* logo à gauche */
 .navbar-compact-logo {
-  font-size: var(--font-size-header);
-  font-family: var(--font-title);
-  font-weight: 600;
-  text-decoration: none;
-  color: var(--dark-color);
-  white-space: nowrap;
+    font-size: var(--font-size-header-mobile); /* Smaller font size for mobile logo */
+    font-family: var(--font-title);
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--dark-color);
+    white-space: nowrap;
+    line-height: 1; /* Ensures text doesn't take extra height */
+}
+
+@media (max-width: 640px) { /* Hide logo on very small screens */
+    .navbar-compact-logo {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar-compact-logo {
+        font-size: var(--font-size-header); /* Original font size for desktop logo */
+    }
 }
 
 /* groupe de liens à droite */
 .navbar-compact-links {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  height: 100%;
+    display: flex;
+    gap: 0.75rem; /* Slightly smaller gap for mobile links */
+    align-items: center;
+    height: 100%;
+}
+
+@media (min-width: 768px) {
+    .navbar-compact-links {
+        gap: 1rem; /* Original gap for desktop */
+    }
 }
 
 /* styles des liens */
 .navbar-compact-links .nav-link {
-  font-size: var(--font-size-paragraph);
-  padding: 0.25rem 0.5rem;
-  text-decoration: none;
-  color: #var(--dark-color);
-  display: flex;
-  align-items: center;
-  height: 100%;
-  transition: background-color 0.2s ease;
+    font-size: var(--font-size-paragraph-mobile); /* Smaller font size for mobile links */
+    padding: 0.35rem 0.65rem; /* Slightly more padding for touch targets */
+    text-decoration: none;
+    color: var(--dark-color); /* Corrected variable usage */
+    display: flex;
+    align-items: center;
+    height: 100%;
+    transition: background-color 0.2s ease, color 0.2s ease; /* Added color transition */
+    border-radius: 4px; /* Ensure rounded corners are applied */
+}
+
+@media (min-width: 768px) {
+    .navbar-compact-links .nav-link {
+        font-size: var(--font-size-paragraph); /* Original font size for desktop links */
+        padding: 0.25rem 0.5rem; /* Original padding for desktop */
+    }
 }
 
 .navbar-compact-links .nav-link:hover {
-  background-color: var(--main-color);
-  border-radius: 4px;
-  color: #000;
+    background-color: var(--main-color);
+    color: var(--light-color); /* Hover text color for better contrast with main-color background */
+    border-radius: 4px; /* Ensure border-radius on hover */
 }
 
 .navbar-compact-links .nav-link.active {
-  font-weight: bold;
-  color: var(--dark-color);
-  text-decoration: underline;
-  border-bottom: 0px ;  /* Your brand color */
-  text-align: center
+    font-weight: bold;
+    color: var(--dark-color);
+    text-decoration: underline; /* Remove default underline if active style is via border-bottom */
+    border-bottom: 0px solid var(--dark-color); /* Add a subtle underline active state */
+    padding-bottom: 0rem; /* Adjust padding to make space for the underline */
+    text-align: center; /* This still has no visual effect for inline-flex elements */
 }
 
 .recipe-container-shadow {
