@@ -6,20 +6,19 @@
     <title>Tartelettes Pistache - AURORE FRENCH PASTRY</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body class="min-h-screen flex flex-col">
 
-  <header class="navbar-compact">
-        <nav class="navbar-compact-container">
-            <a href="index.html" class="navbar-compact-logo">AURORE FRENCH PASTRY</a>
-            <div class="navbar-compact-links">
-                <a href="index.html" class="nav-link">ACCUEIL</a>
-                <a href="all-recipes.html" class="nav-link active">RECETTES</a>
-                <a href="contact.html" class="nav-link">CONTACT</a>
-            </div>
-        </nav>
-    </header>
+  <div id="navbar-placeholder"></div>
+  <script>
+    fetch('../../navbar-recipe.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('navbar-placeholder').innerHTML = html;
+      })
+      .catch(error => console.error('Error loading navbar:', error));
+  </script>
 
     <main class="flex-grow">
         <section class="recipe-template">
@@ -28,7 +27,7 @@
 
             <div class="recipe-layout">
                 <div class="recipe-image-block">
-                    <img src="img/tarte_noisette.jpg" alt="Tartelettes Pistache" class="recipe-main-image">
+                    <img src="img.jpg" alt="Tartelettes Pistache" class="recipe-main-image">
                 </div>
                 <div class="recipe-info-block">
                     <div class="recipe-info-box">
@@ -63,7 +62,7 @@
 
     <div id="footer-placeholder"></div>
     <script>
-      fetch('footer.html')
+      fetch('../../footer.html')
         .then(res => res.text())
         .then(html => {
           document.getElementById('footer-placeholder').innerHTML = html;

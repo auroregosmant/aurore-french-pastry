@@ -15,6 +15,7 @@
     --font-size-section-mobile: 28px;
     --font-size-header-mobile: 20px;
     --font-size-paragraph-mobile: 16px;
+    --font-size-paragraph-detail-mobile: 10px;
 
     --spacing-unit: 1rem;
     --hero-height: 400px;
@@ -49,6 +50,7 @@
     --section-title-color: #2c2c2c;
     --subsection-title-color: black;/*#5f5f5f;*/
     --paragraph-color: black; /*nochange*/
+    --paragraph-detail-color: #5D7975; /*nochange*/
     --button-hover-color: #5D7975;
 
     --light-color:#D7E0DA;
@@ -220,7 +222,6 @@ section {
     z-index: 10;
     color: white;
     text-align: center; /* This text-align is for text inside, not flex items */
-    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 0.75rem; /* rounded-xl */
     width: 90vw; /* Responsive width for mobile */
     max-height: 200px; /* Minimal height, will expand with content */
@@ -372,6 +373,22 @@ h1.section-title {
 @media (min-width: 768px) {
     .recipe-card-description {
         font-size: var(--font-size-paragraph); /* Desktop font size */
+    }
+}
+
+.recipe-card-details {
+    color: var(--paragraph-detail-color-color);
+    font-size: var(--font-size-paragraph-detail-mobile); /* Mobile font size */
+    border-radius: 0;
+    margin: 0rem 1rem; /* Adjusted margin */
+
+    text-decoration: none;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .recipe-card-details {
+        font-size: var(--font-size-paragraph-detail); /* Desktop font size */
     }
 }
 
@@ -620,13 +637,14 @@ h1.section-title {
     }
 }
 .footer-copy {
-    margin-top: 0.5rem; /* Adjusted margin */
+    padding: 1rem 0rem; /* Adjusted margin */
+    margin: 0rem; /* Adjusted margin */
     font-size: 0.5rem; /* Smaller for mobile */
     color: var(--paragraph-color);
 }
 @media (min-width: 768px) {
     .footer-copy {
-        margin-top: 0.5rem; /* Original for desktop */
+        margin-top: 0rem; /* Original for desktop */
         font-size: 0.875rem;
     }
 }
@@ -860,14 +878,14 @@ h1.section-title {
 /* styles des liens */
 .navbar-compact-links .nav-link {
     font-size: var(--font-size-paragraph-mobile); /* Smaller font size for mobile links */
-    padding: 0.35rem 0.65rem; /* Slightly more padding for touch targets */
+    padding: 0rem 0.65rem; /* Slightly more padding for touch targets */
     text-decoration: none;
     color: var(--dark-color); /* Corrected variable usage */
     display: flex;
     align-items: center;
     height: 100%;
     transition: background-color 0.2s ease, color 0.2s ease; /* Added color transition */
-    border-radius: 4px; /* Ensure rounded corners are applied */
+    border-radius: 0px; /* Ensure rounded corners are applied */
 }
 
 @media (min-width: 768px) {
@@ -880,7 +898,7 @@ h1.section-title {
 .navbar-compact-links .nav-link:hover {
     background-color: var(--main-color);
     color: var(--light-color); /* Hover text color for better contrast with main-color background */
-    border-radius: 4px; /* Ensure border-radius on hover */
+    border-radius: 0px; /* Ensure border-radius on hover */
 }
 
 .navbar-compact-links .nav-link.active {

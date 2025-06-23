@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tartelettes Pistache - AURORE FRENCH PASTRY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/filter.css">
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <div id="navbar-placeholder"></div>
+    <script>
+      fetch('navbar.html')
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('navbar-placeholder').innerHTML = html;
+        });
+    </script>
+
+    <main class="flex-grow">
+        <section class="recipe-template">
+            <h1 class="recipe-title">TOUTES LES RECETTES</h1>
+        </section>
+            
+        <section class="py-20 section mb-12">
+            <div class="container mx-auto px-8 mb-12">
+              <div id="category-filter" class="category-filter"></div>
+              <div class="recipes-grid"></div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script>
+      fetch('footer.html')
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('footer-placeholder').innerHTML = html;
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
