@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praliné noisettes - AURORE FRENCH PASTRY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <div id="navbar-placeholder"></div>
+  <script>
+    fetch('../../navbar-recipe.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('navbar-placeholder').innerHTML = html;
+      })
+      .catch(error => console.error('Error loading navbar:', error));
+  </script>
+
+    <main class="flex-grow">
+        <section class="recipe-template">
+            <h1 class="recipe-title">Praliné noisettes</h1>
+            <p class="recipe-subtitle">COMPOSITION: DES NOISETTES, DES NOISETTES, ET... ENCORE DES NOISETTES ♡ </p>
+
+            <div class="recipe-layout">
+                <div class="recipe-image-block">
+                    <img src="img.jpeg" alt="praline-noisettes" class="recipe-main-image">
+                </div>
+                <div class="recipe-info-block">
+                    <div class="recipe-info-box">
+                        <p>
+                            <li><strong>Astuce conservation:</strong>
+                            Le praliné se conserve environ 3 mois dans un pot hermétique, à l’abri de la lumière et de la chaleur.
+                            (Mais soyons honnêtes… le pot sera sûrement fini bien avant !)
+                            </li>
+                            <br>
+                            <li>Dans cette recette, j’utilise la méthode du sablage, qui permet d'obtenir un praliné intense en goût de noisette.</li>
+                        </p>
+                    </div>
+                    <p class="recipe-intro">Découvre la recette de mon délicieux praliné noisettes!</p>
+                    <div class="insta-reel-horizontal" href="https://www.instagram.com/p/DGfWndJxKUF/?utm_source=ig_web_copy_link&igsh=OHY4ajF4c3Z1dDNz">
+                        <a href="https://www.instagram.com/p/DGfWndJxKUF/?utm_source=ig_web_copy_link&igsh=OHY4ajF4c3Z1dDNz" target="_blank" class="circle-icon">
+                        <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.instagram.com/p/DGfWndJxKUF/?utm_source=ig_web_copy_link&igsh=OHY4ajF4c3Z1dDNz" target="_blank" class="reel-link">
+                            Tartelette noisette coeur coulant praliné.
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-white-section">
+                <h2 class="recipe-section-title">1. Praliné noisettes - méthode du sablage.</h2>
+                <ul class="recipe-list">
+                    <strong>Recette pour environ 350g de praliné:</strong>
+                    <li>130g sucre en poudre</li>
+                    <li>45g eau</li>
+                    <li>200g noisettes d'Oregon</li>
+                    <li>2g fleur de sel</li>
+                    <li>1 gousse de vanille</li>
+                </ul>
+
+                <p class="recipe-step-text">
+                    Dans une casserole, verser l'eau et le sucre, puis fais chauffer à feu moyen.
+                    <br>
+                    <br>
+                    Lorsque le mélange atteint 117°C, ajoute les noisettes, la vanille et la gousse fendue.
+                    <br>
+                    <br>
+                    Continue à mélanger : le sucre va cristalliser autour des noisettes et former une pellicule blanche. On dit que le mélange "sable". 
+                    Pas d'inquiétude, c'est normal! Poursuis la cuisson en mélangeant régulièrement, jusqu’à ce que le sucre fonde à nouveau et que les noisettes soient bien enrobées d’un caramel ambré.
+                    <br>
+                    <br>
+                    Une fois que les noisettes sont enrobées de caramel ambré, verse immédiatement sur une plaque recouverte de papier sulfurisé, saupoudre de fleur de sel, puis laisse refroidir complètement.
+                    <br>
+                    <br>
+                    Place ensuite les noisettes caramélisées (toujours avec la gousse de vanille) dans un mixeur. 
+                    Mixe jusqu’à obtenir une pâte homogène. Plus tu mixes, plus le praliné sera fluide. Si ton mixeur chauffe, fais des pauses pour éviter de l’abîmer.
+                    <br>
+                    Astuce: pour faciliter le mixage, tu peux ajouter 1 cuillère à soupe d’huile neutre (tournesol, pépins de raisin, colza, arachide).
+                </p>
+
+            <h2 class="recipe-section-title">Bonne Dégustation !!</h2>
+                <div class="recipe-image-block">
+                    <img src="praline.jpeg" alt="praline-noisettes" class="recipe-main-image">
+                </div>
+                <p class="recipe-step-text">
+                    Si tu tentes ma recette, tagues-moi <strong>@aurore.gos</strong> sur Instagram pour me montrer le résultat!!
+                    <br>
+                    <br>
+                    Hésites pas à me faire des retours sur la recette ou à me poser tes questions!
+                </p>
+                <div class="recipe-divider">♡</div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script>
+      fetch('../../footer.html')
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('footer-placeholder').innerHTML = html;
+        });
+    </script>
+
+</body>
+</html>

@@ -1,7 +1,9 @@
 fetch('glossary - glossary.csv')
   .then(response => response.text())
   .then(csvText => {
-    const data = Papa.parse(csvText, { header: true }).data.filter(row => row.title && row.image && row.link);
+    const data = Papa.parse(csvText, { header: true }).data
+                .filter(row => row.title && row.image && row.link)
+                .sort((a, b) => new Date(b.date) - new Date(a.date));
     const grid = document.querySelector('.recipes-grid');
     const filterContainer = document.getElementById('category-filter');
 
